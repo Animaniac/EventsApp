@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace EventsApp.Controllers
+{
+    public class EventController : Controller
+    {
+        public ActionResult GetAllEvents()
+        {
+            var entity = new EventsEntity();
+            var myEvents = entity.MyEvents.ToList();
+            return Json(myEvents, JsonRequestBehavior.AllowGet);
+        }
+    }
+}
