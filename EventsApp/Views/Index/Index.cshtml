@@ -1,33 +1,23 @@
 ﻿
+
 @{
     ViewBag.Title = "Index";
 }
 
 
-<section id="eventsCardsHolder"></section>
+<section id="eventsCardsHolder"></section
+<script>
 
-
-
-
-
-
-<script>     
     $.getJSON("@Url.Action("GetAllEvents", "Event")", function (data) {
         console.log(data);
         let eventCard = $("<div class=\"eventCard\"></div>");
-        let eventName = $("<div class=\"eventName\"></div>");
         let eventTimer = $("<div class=\"countDown\"></div>");
 
         $.each(data, function (key, value) {
             console.log(value);
             console.log(value.EventName);
-            //$("<div/>"), {
-            //    "class": "eventName",
-            //    text: value.EventName,
-            //}
-            //.appendTo("#eventsCardsHolder")
-
-            $("#eventsCardsHolder").append(value.EventName + " " + value.EventDate);            
+            let eventName = $("<div class=\"eventName\">" +value.EventName +"</div>");
+            $("#eventsCardsHolder").prepend(eventName);
         });
-    });    
+    });
 </script>
