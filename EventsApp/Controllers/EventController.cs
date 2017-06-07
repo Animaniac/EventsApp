@@ -9,11 +9,6 @@ namespace EventsApp.Controllers
 {
     public class EventController : Controller
     {
-        public ActionResult GetAllEvents()
-        {
-            var entity = new EventsEntity();
-            var myEvents = entity.MyEvents.ToList();
-            return Json(myEvents, JsonRequestBehavior.AllowGet);
-        }
+        
     }
 }
