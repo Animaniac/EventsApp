@@ -52,5 +52,19 @@ namespace EventsApp.Controllers
             entity.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public  ActionResult Create( MyEvent newEvent)
+        {
+            var entity = new EventsEntity();
+            entity.MyEvents.Add(newEvent);
+            entity.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }   
 }
