@@ -40,12 +40,12 @@ textarea {
 }
 
 .eventName{
-    width: 30vw;
+    min-width: 25vw;
 }
 
 .countDown{
     text-align: center;
-    min-width: 45vw;
+    min-width: 35vw;
 }
 
 .titles {
@@ -67,6 +67,6 @@ textarea {
 #crudLinks {
     display: flex;
     flex-direction: column;
-    width: 25vw;
+    min-width: 25vw;
     padding-left: 9vw;
 }

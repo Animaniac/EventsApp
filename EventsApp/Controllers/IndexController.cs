@@ -11,7 +11,7 @@ namespace EventsApp.Controllers
         public ActionResult Index()
         {
             var entity = new EventsEntity();
-            var myEvents =  entity.MyEvents.Where( x => x.EventDate > DateTime.Now).ToList();            
+            var myEvents =  entity.MyEvents.Where( x => x.EventDate > DateTime.Now).OrderBy( x => x.EventDate).ToList();            
             return View(myEvents);
         }
         
