@@ -8,7 +8,6 @@ namespace EventsApp.Controllers
 {
     public class IndexController : Controller
     {
-        // GET: Index
         public ActionResult Index()
         {
             var entity = new EventsEntity();

@@ -10,25 +10,20 @@
         var humanizeTimes = function () {
             $.each(allEventTimes, function () {
                 var eventTime = new Date($(this).find(".eventTime").text());
-                var eventCountdown = countdown(new Date(), eventTime).toString();
-                var blah = $(this).find(".eventTime").text();
-                $(this).find(".countDown").text(eventCountdown);
-                console.log(eventTime);
-                console.log(blah);
+                var eventCountdown = countdown(new Date(), eventTime).toString();                
+                $(this).find(".countDown").text(eventCountdown);                
             });
         };
         humanizeTimes();
-        setInterval(humanizeTimes, 1000);
-        
+        setInterval(humanizeTimes, 1000);        
     });
        
 </script>
+<div class="titles">
+    <h2>My Events</h2>
+    <p>@Html.ActionLink("Create New", "Create")</p>
+</div>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 <section id="eventsSection">
     <div class="eventCard">
@@ -40,9 +35,9 @@
                     <div class="eventTime" style="display: none">@item.EventDate.ToString("MM/dd/yyyy")</div>
                     <div class="countDown"></div>
                     
-                    <div>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.EventId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.EventId }) |
+                    <div  id="crudLinks">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.EventId })
+                        @Html.ActionLink("Details", "Details", new { id = item.EventId })
                         @Html.ActionLink("Delete", "Delete", new { id = item.EventId })
                     </div>
                 </li>

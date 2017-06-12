@@ -22,3 +22,51 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*My Styles*/
+.eventContainer{
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 3vh;
+    border-bottom: 1px solid #808080;
+}
+
+.eventContainer li{
+    list-style: none;
+}
+
+.eventCard ul{
+    padding-left: 0;
+}
+
+.eventName{
+    width: 30vw;
+}
+
+.countDown{
+    text-align: center;
+    min-width: 45vw;
+}
+
+.titles {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 3vh;
+}
+
+.titles h2{
+    width: 50vw;
+}
+
+.titles p {
+    width: 50vw;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#crudLinks {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    padding-left: 9vw;
+}
