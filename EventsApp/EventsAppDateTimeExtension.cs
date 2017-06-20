@@ -13,8 +13,8 @@ namespace EventsApp
             get
             {
                 var nowDateTime = DateTime.Now;
-                var blah = EventDate - nowDateTime;
-                return blah.Humanize(4);
+                var timeToEvent = EventDate - nowDateTime;
+                return timeToEvent.Humanize(4);
             }
         }
     }
