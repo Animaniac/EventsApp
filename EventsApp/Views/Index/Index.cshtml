@@ -19,13 +19,13 @@
     });       
 </script>
 <script>
-    $(function () {
-        $("div.box").bind("tap", tapHandler);
-
-        function tapHandler(event) {
-            $(event.target).tr("tap");
-        }
-    });
+    
+    $(function GetClickedElementsEventId () {
+        $(".eventContainer").on("click touch", function () {
+            var eventId = $(this).children("div.eventId").text();
+            console.log(eventId);
+            return eventId;
+        });});
 </script>
 <div class="titles">
     <h2>My Events</h2>
@@ -39,6 +39,7 @@
             @foreach (var item in Model)
             {
                 <li class="eventContainer">
+                    <div class="eventId" style="display: none">@item.EventId</div>
                     <div class="eventName">@Html.DisplayFor(model => item.EventName)</div>
                     <div class="eventTime" style="display: none">@item.EventDate.ToString("MM/dd/yyyy")</div>
                     <div class="countDown"></div>
