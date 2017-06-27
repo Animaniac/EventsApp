@@ -18,8 +18,7 @@
         setInterval(humanizeTimes, 1000);        
     });       
 </script>
-<script>
-    
+<script>    
     $(function GetClickedElementsEventId () {
         $(".eventContainer").on("click touch", function () {
             var eventId = $(this).children("div.eventId").text();
@@ -32,8 +31,6 @@
     <h2>My Events</h2>
     <p>@Html.ActionLink("Create New", "Create")</p>
 </div>
-
-
 <section id="eventsSection">
     <div class="eventCard">
         <ul>
