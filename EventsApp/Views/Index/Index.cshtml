@@ -23,7 +23,7 @@
         $(".eventContainer").on("click touch", function () {
             var eventId = $(this).children("div.eventId").text();
             console.log(eventId);
-            @Html.ActionLink("Details", "Details", new { id = item.EventId })
+            
             return eventId;
         });});
 </script>

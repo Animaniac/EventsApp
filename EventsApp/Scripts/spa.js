@@ -1,12 +1,37 @@
 ﻿$.getJSON("@Url.Action("GetAllEvents", "Event")", function (data) {
-    -        console.log(data);
-    -        let eventCard = $("<div class=\"eventCard\"></div>");
-    -        let eventTimer = $("<div class=\"countDown\"></div>");
-    -
-        -        $.each(data, function (key, value) {
-            -            console.log(value);
-            -            console.log(value.EventName);
-            -            let eventName = $("<div class=\"eventName\">" + value.EventName + "</div>");
-            -            $("#eventsCardsHolder").prepend(eventName);
-            -        });
+    console.log(data);
 });
+
+$('a').on('click', function (e) {
+    e.preventDefault();
+    let pageRef = $(this).attr('href');
+
+    callPage(pageRef);
+});
+
+function callPage(pageRefInput) {
+    $.ajax({
+        url: pageRefInput,
+        type: "get",
+        dataType: text,
+        success: function (response) {
+            console.log('the page was loaded', response);
+            $('#eventsSection').html(response);
+        },
+        error: function (response) {
+            console.log("The page was not loaded correctly!", error);
+        }
+    })
+}
+
+function renderEventsList(url, data) {
+    //do stuff
+}
+
+function renderEventDetails(data) {
+
+}
+
+function renderEditPage(data) {
+
+}
