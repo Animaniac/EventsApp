@@ -5,25 +5,32 @@ $(function (){
     $("a").on('click', function (e) {
         e.preventDefault();
         let pageRef = $(this).attr('href');
-        console.log(pageRef);        
+        alert(pageRef);
         callPage(pageRef);
     });
 });
 
 
 function callPage(pageRefInput) {
-    $.ajax({
-        url: pageRefInput,
-        type: "get",
-        dataType: "text",
-        success: function (response) {
-            console.log('the page was loaded', response);
-            $('.body-content').html(response);
-        },
-        error: function (response) {
-            console.log("The page was not loaded correctly!", error);
-        }
+    //if the pagerefinput == "/" check the db for a change, if there is none dont reload
+    if (pageRefInput !="/") {
+        $.ajax({
+            url: pageRefInput,
+            type: "get",
+            dataType: "text",
+            success: function (response) {
+                console.log('the page was loaded', response);
+                $('.singlePage').html(response);
+            },
+            error: function (response) {
+                console.log("The page was not loaded correctly!", error);
+            }
     })
+    }
+    else {
+        alert("alert")
+    }
+    
 }
 
 function renderEventsList(url, data) {
