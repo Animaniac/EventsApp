@@ -1,13 +1,15 @@
 ﻿/*$.getJSON("@Url.Action("GetAllEvents", "Event")", function (data) {
     console.log(data);
 }));*/
-
-$('a').on('click', function (e) {
-    e.preventDefault();
-    let pageRef = $(this).attr('href');
-    console.log(pageRef);
-    callPage(pageRef);
+$(function (){
+    $("a").on('click', function (e) {
+        e.preventDefault();
+        let pageRef = $(this).attr('href');
+        console.log(pageRef);        
+        callPage(pageRef);
+    });
 });
+
 
 function callPage(pageRefInput) {
     $.ajax({
@@ -16,7 +18,7 @@ function callPage(pageRefInput) {
         dataType: "text",
         success: function (response) {
             console.log('the page was loaded', response);
-            $('#eventsSection').html(response);
+            $('.body-content').html(response);
         },
         error: function (response) {
             console.log("The page was not loaded correctly!", error);
