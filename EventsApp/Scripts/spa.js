@@ -4,8 +4,7 @@
 $(function (){
     $("a").on('click', function (e) {
         e.preventDefault();
-        let pageRef = $(this).attr('href');
-        alert(pageRef);
+        let pageRef = $(this).attr('href');       
         callPage(pageRef);
     });
 });
